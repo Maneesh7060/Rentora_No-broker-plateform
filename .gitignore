@@ -1,0 +1,15 @@
+# Rentora
+node_modules/
+client/node_modules/
+server/node_modules/
+
+.env
+.env.*
+!.env.example
+
+dist/
+.dist/
+build/
+coverage/
+*.log
+.DS_Store

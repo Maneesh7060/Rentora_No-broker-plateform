@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   Rentora — Editorial Real Estate CSS Tokens
+   ======================================== */
+
+@layer base {
+  body {
+    @apply bg-warm-50 text-warm-900 antialiased font-sans selection:bg-primary-100 selection:text-primary-900;
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-warm-900 font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Reusable button base */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-5 py-2.5 bg-primary-500 text-white font-medium rounded-lg
+           hover:bg-primary-600 active:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2
+           shadow-warm-sm transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed text-sm;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-5 py-2.5 bg-white text-warm-700 font-medium rounded-lg
+           border border-warm-300 hover:bg-warm-100 hover:text-warm-900 hover:border-warm-400 focus:outline-none 
+           focus:ring-2 focus:ring-warm-400 focus:ring-offset-2 shadow-warm-sm transition-all duration-150 text-sm;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-5 py-2.5 bg-transparent text-primary-600 font-medium rounded-lg
+           border border-primary-500 hover:bg-primary-50 active:bg-primary-100 focus:outline-none focus:ring-2 
+           focus:ring-primary-400 focus:ring-offset-2 transition-all duration-150 text-sm;
+  }
+
+  /* Form input base */
+  .input-field {
+    @apply block w-full px-3.5 py-2.5 text-warm-900 bg-white border border-warm-300 rounded-lg text-sm
+           placeholder:text-warm-400 focus:outline-none focus:ring-2 focus:ring-primary-500/20
+           focus:border-primary-500 transition-all duration-150 shadow-warm-sm;
+  }
+
+  .select-field {
+    @apply block w-full px-3.5 py-2.5 text-warm-900 bg-white border border-warm-300 rounded-lg text-sm
+           focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500
+           transition-all duration-150 shadow-warm-sm;
+  }
+
+  /* Card container */
+  .card {
+    @apply bg-white rounded-xl shadow-warm-sm border border-warm-200 p-6 transition-shadow duration-200;
+  }
+
+  .card-hover {
+    @apply bg-white rounded-xl shadow-warm-sm border border-warm-200 hover:border-warm-300 hover:shadow-warm-md transition-all duration-200;
+  }
+
+  /* Badges */
+  .badge-success {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sage-50 text-sage-700 border border-sage-100;
+  }
+
+  .badge-warning {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700 border border-amber-100;
+  }
+
+  .badge-danger {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-brick-50 text-brick-700 border border-brick-100;
+  }
+
+  .badge-neutral {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-warm-100 text-warm-700 border border-warm-200;
+  }
+
+  .badge-primary {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700 border border-primary-100;
+  }
+}
+
+/* ========================================
+   Custom Leaflet Map & Price Marker Styles
+   ======================================== */
+
+.leaflet-div-icon.rentora-price-marker-icon,
+.leaflet-div-icon.rentora-search-center-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.leaflet-popup.rentora-map-popup .leaflet-popup-content-wrapper {
+  border-radius: 0.875rem !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  box-shadow: 0 16px 30px -6px rgba(40, 30, 20, 0.16), 0 4px 10px -2px rgba(40, 30, 20, 0.08) !important;
+  border: 1px solid rgba(232, 226, 214, 0.95) !important;
+  background: #ffffff !important;
+}
+
+.leaflet-popup.rentora-map-popup .leaflet-popup-content {
+  margin: 0 !important;
+  line-height: normal !important;
+}
+
+.leaflet-popup.rentora-map-popup a.leaflet-popup-close-button {
+  top: 8px !important;
+  right: 8px !important;
+  width: 24px !important;
+  height: 24px !important;
+  background: rgba(31, 30, 29, 0.7) !important;
+  color: white !important;
+  border-radius: 9999px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 13px !important;
+  font-weight: bold !important;
+  backdrop-filter: blur(4px) !important;
+  border: none !important;
+  transition: background 0.15s ease !important;
+}
+
+.leaflet-popup.rentora-map-popup a.leaflet-popup-close-button:hover {
+  background: rgba(31, 30, 29, 0.95) !important;
+}
+
+.leaflet-container {
+  font-family: inherit !important;
+}
